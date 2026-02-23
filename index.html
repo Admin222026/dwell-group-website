@@ -3,217 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dwell Group | Empowering Global Talent</title>
+<title>Dwell Group | Established 2004</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{background:#000;color:#fff;overflow-x:hidden;}
-a{text-decoration:none;color:#ff2e93;}
+html{scroll-behavior:smooth;}
+section{padding:90px 20px;text-align:center;}
+h2{color:#ff2e93;margin-bottom:60px;font-size:36px;}
+a{text-decoration:none}
 
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
+nav h3{color:#ff2e93;}
+nav a{color:#fff;margin-left:20px;font-size:14px;}
+nav a:hover{color:#ff2e93}
+
+/* HERO */
 header{
-background:linear-gradient(135deg,#000,#1a0010);
-padding:80px 20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+background:linear-gradient(-45deg,#000,#14000c,#1a0010,#000);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+padding:20px;
 }
-header h1{font-size:48px;color:#ff2e93;}
-header p{font-size:18px;margin-top:10px;color:#ccc;}
+@keyframes gradient{
+0%{background-position:0% 50%}
+50%{background-position:100% 50%}
+100%{background-position:0% 50%}
+}
+header h1{
+font-size:60px;
+color:#ff2e93;
+}
+header p{
+margin-top:15px;
+font-size:22px;
+color:#ccc;
+}
+.est{margin-top:10px;color:#aaa}
 .btn{
-display:inline-block;
-margin-top:25px;
-padding:12px 28px;
+margin-top:30px;
+padding:14px 35px;
 background:#ff2e93;
+border-radius:40px;
 color:#fff;
-border-radius:30px;
+font-weight:600;
 transition:0.3s;
+display:inline-block;
 }
-.btn:hover{background:#fff;color:#000;}
+.btn:hover{background:#fff;color:#000;transform:scale(1.05)}
 
-section{padding:70px 20px;text-align:center;}
-h2{color:#ff2e93;margin-bottom:40px;font-size:32px;}
+/* STATS */
+.stats{
+display:flex;
+justify-content:center;
+gap:80px;
+margin-top:60px;
+flex-wrap:wrap;
+}
+.stat h3{color:#ff2e93;font-size:32px}
+.stat p{color:#aaa}
 
+/* SERVICES */
 .services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-max-width:1100px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+max-width:1200px;
 margin:auto;
 }
 .card{
-background:#111;
-padding:25px;
-border-radius:12px;
-cursor:pointer;
+background:rgba(255,255,255,0.05);
+padding:35px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,0.1);
 transition:0.4s;
-border:1px solid #222;
+cursor:pointer;
 }
-.card:hover{transform:translateY(-8px);border-color:#ff2e93;}
-.card p{margin-top:15px;color:#ccc;display:none;font-size:14px;}
-.card.active p{display:block;}
+.card:hover{transform:translateY(-10px);border-color:#ff2e93}
+.card p{margin-top:15px;color:#ccc;font-size:14px;display:none}
+.card.active p{display:block}
 
-.slider{
-overflow:hidden;
-white-space:nowrap;
+/* CLIENT SLIDER */
+.client-wrapper{overflow:hidden}
+.client-track{
+display:flex;
+gap:80px;
+animation:scroll 35s linear infinite;
 }
-.slider-track{
-display:inline-block;
-animation:scroll 30s linear infinite;
-}
-.slider img{
-height:60px;
-margin:0 40px;
-filter:grayscale(100%);
-transition:0.3s;
-}
-.slider img:hover{filter:none;}
+.client{text-align:center;min-width:150px}
+.client img{height:60px;filter:grayscale(100%);transition:0.3s}
+.client img:hover{filter:none;transform:scale(1.1)}
+.client p{margin-top:8px;color:#aaa;font-size:13px}
 @keyframes scroll{
-from{transform:translateX(0);}
-to{transform:translateX(-50%);}
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
 }
 
-.testimonials{
-max-width:900px;
+/* TESTIMONIAL */
+.testimonial-box{
+max-width:800px;
 margin:auto;
-}
-.testimonial{
-background:#111;
-padding:25px;
-border-radius:10px;
-margin-bottom:20px;
-border-left:4px solid #ff2e93;
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:20px;
+border-left:5px solid #ff2e93;
+min-height:150px;
 }
 
-.contact{
-background:#111;
-padding:50px 20px;
+/* CONTACT */
+form{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:20px;
 }
+input,textarea{
+padding:15px;
+border-radius:10px;
+border:none;
+outline:none;
+}
+button{
+padding:15px;
+background:#ff2e93;
+border:none;
+border-radius:30px;
+color:#fff;
+font-weight:600;
+cursor:pointer;
+}
+button:hover{background:#fff;color:#000}
+
 footer{
+padding:30px;
 background:#000;
-padding:20px;
+color:#888;
 font-size:14px;
-color:#aaa;
+text-align:center;
+margin-top:60px;
 }
 </style>
 </head>
+
 <body>
+
+<nav>
+<h3>Dwell Group</h3>
+<div>
+<a href="#services">Services</a>
+<a href="#clients">Clients</a>
+<a href="#contact">Contact</a>
+<a href="https://www.linkedin.com/company/hr-consultancy.linkedinhrconsultancy/" target="_blank">LinkedIn</a>
+</div>
+</nav>
 
 <header>
 <h1>Dwell Group</h1>
 <p>Empowering Global Talent and Business Growth</p>
-<a href="https://www.linkedin.com/company/hr-consultancy.linkedinhrconsultancy/" class="btn" target="_blank">Connect on LinkedIn</a>
+<div class="est">Established 2004</div>
+<a href="#contact" class="btn">Get Consultation</a>
+
+<div class="stats">
+<div class="stat"><h3>500+</h3><p>Clients Served</p></div>
+<div class="stat"><h3>1000+</h3><p>Placements</p></div>
+<div class="stat"><h3>20+</h3><p>Industries</p></div>
+</div>
 </header>
 
-<section>
+<section id="services">
 <h2>Our Services</h2>
 <div class="services">
 
 <div class="card" onclick="toggle(this)">
 <h3>H1B Sponsorship Assistance</h3>
-<p>End-to-end guidance for H1B filing, documentation, compliance, employer coordination and candidate support ensuring seamless visa processing.</p>
+<p>Complete lifecycle H1B processing, documentation, compliance advisory and employer coordination ensuring seamless visa transitions.</p>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <h3>International Recruitment</h3>
-<p>Global talent sourcing across IT and Non-IT sectors with structured screening, compliance verification and seamless onboarding support.</p>
+<p>Global sourcing across IT and Non-IT domains with structured screening, onboarding and compliance validation.</p>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <h3>US Staffing</h3>
-<p>Contract, contract-to-hire and full-time placements with deep client engagement and rapid turnaround models.</p>
+<p>Contract, C2H and Full-time hiring models delivering rapid deployment and strategic talent alignment.</p>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <h3>HR Consulting</h3>
-<p>Strategic HR advisory including policy building, compliance, performance frameworks and workforce planning.</p>
+<p>Workforce planning, compliance structuring, HR frameworks and performance strategy advisory.</p>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <h3>Resume Marketing</h3>
-<p>Premium resume branding, ATS optimization, profile positioning and targeted employer marketing campaigns.</p>
+<p>Premium resume branding, ATS optimization and employer-targeted marketing campaigns.</p>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <h3>Employer Branding</h3>
-<p>Enhancing employer presence with talent engagement strategies and recruitment marketing campaigns.</p>
+<p>Enhancing employer presence through recruitment marketing and digital brand positioning.</p>
 </div>
 
 <div class="card" onclick="toggle(this)">
 <h3>Payroll Management</h3>
-<p>Accurate payroll processing, statutory compliance, taxation management and employee benefit administration.</p>
+<p>Accurate payroll processing, statutory compliance management and employee benefits administration.</p>
 </div>
 
 </div>
 </section>
 
-<section>
+<section id="clients">
 <h2>Our End Clients</h2>
-<div class="slider">
-<div class="slider-track">
-<img src="https://logo.clearbit.com/tcs.com">
-<img src="https://logo.clearbit.com/infosys.com">
-<img src="https://logo.clearbit.com/wipro.com">
-<img src="https://logo.clearbit.com/hdfcbank.com">
-<img src="https://logo.clearbit.com/icicibank.com">
-<img src="https://logo.clearbit.com/amazon.com">
-<img src="https://logo.clearbit.com/flipkart.com">
-<img src="https://logo.clearbit.com/airtel.in">
-<img src="https://logo.clearbit.com/reliance.com">
-<img src="https://logo.clearbit.com/bp.com">
-<img src="https://logo.clearbit.com/shell.com">
-<img src="https://logo.clearbit.com/ibm.com">
-<img src="https://logo.clearbit.com/accenture.com">
-<img src="https://logo.clearbit.com/cognizant.com">
-<img src="https://logo.clearbit.com/capgemini.com">
-<img src="https://logo.clearbit.com/oracle.com">
-<img src="https://logo.clearbit.com/deloitte.com">
-<img src="https://logo.clearbit.com/pwc.com">
-<img src="https://logo.clearbit.com/techmahindra.com">
-<img src="https://logo.clearbit.com/lntinfotech.com">
-<img src="https://logo.clearbit.com/microsoft.com">
-<img src="https://logo.clearbit.com/google.com">
+<div class="client-wrapper">
+<div class="client-track">
+
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/TCS_New_Logo.svg"><p>TCS</p></div>
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg"><p>Infosys</p></div>
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"><p>Amazon</p></div>
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"><p>IBM</p></div>
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"><p>Microsoft</p></div>
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"><p>Google</p></div>
+
+<!-- duplicated for smooth loop -->
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/TCS_New_Logo.svg"><p>TCS</p></div>
+<div class="client"><img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg"><p>Infosys</p></div>
+
 </div>
 </div>
 </section>
 
 <section>
-<h2>Client Reviews</h2>
-<div class="testimonials">
-
-<div class="testimonial">
-<p>“Dwell Group delivered exceptional talent within tight timelines. Their professionalism and structured process are unmatched.”</p>
-<strong>– BFSI Client</strong>
-</div>
-
-<div class="testimonial">
-<p>“Their H1B support and payroll management made expansion seamless. Highly reliable partner.”</p>
-<strong>– IT Consulting Firm</strong>
-</div>
-
-<div class="testimonial">
-<p>“A true recruitment partner. Quality profiles, fast response and transparent communication.”</p>
-<strong>– E-commerce Enterprise</strong>
-</div>
-
-<div class="testimonial">
-<p>“We scaled our telecom division successfully with Dwell Group’s support.”</p>
-<strong>– Telecom Client</strong>
-</div>
-
+<h2>Client Testimonials</h2>
+<div class="testimonial-box" id="testimonial">
+“Dwell Group consistently delivers high-quality talent across multiple industries.”
 </div>
 </section>
 
-<section class="contact">
+<section id="contact">
 <h2>Contact Us</h2>
-<p>Email: <a href="mailto:Hr@dwellgroup.in">Hr@dwellgroup.in</a></p>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button type="submit">Submit</button>
+</form>
+<p style="margin-top:20px;color:#ff2e93;">Hr@dwellgroup.in</p>
 </section>
 
 <footer>
-© 2026 Dwell Group. All Rights Reserved.
+© 2004 Dwell Group. All Rights Reserved.
 </footer>
 
 <script>
 function toggle(card){
 card.classList.toggle("active");
 }
+
+const testimonials=[
+"Professional H1B processing and payroll support.",
+"Reliable staffing partner with strong compliance knowledge.",
+"Exceptional recruitment turnaround time.",
+"Strategic HR consulting with measurable impact."
+];
+let index=0;
+setInterval(()=>{
+index=(index+1)%testimonials.length;
+document.getElementById("testimonial").innerText=testimonials[index];
+},4000);
 </script>
 
 </body>
